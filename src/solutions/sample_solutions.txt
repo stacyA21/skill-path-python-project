@@ -1,0 +1,139 @@
+⚙️ Generating data...
+Final number of generated customers: 200
+🚀 Data generated correctly!
+Start of data_string: ' Christine Hamilton,20,X,Monday 01 January 2024,Wavy,33;Barry Rios,50,M,Monday 01 January 2024,Buzz,'
+
+Exercise 1
+==========
+
+Exercise 1.1
+============
+orders_strings[0]=' Christine Hamilton,20,X,Monday 01 January 2024,Wavy,33'
+
+Exercise 1.2
+============
+orders_lists[0]=[' Christine Hamilton', '20', 'X', 'Monday 01 January 2024', 'Wavy', '33']
+
+Exercise 1.3
+============
+orders_cleaned[0]=['Christine Hamilton', '20', 'X', 'Monday 01 January 2024', 'Wavy', '33']
+
+Exercise 1.4
+============
+orders_casted[0]=['Christine Hamilton', 20, 'X', 'Monday 01 January 2024', 'Wavy', 33]
+
+Exercise 2
+==========
+
+Exercise 2.1
+============
+Customer Christine Hamilton got the haircut Wavy on Monday 01 January 2024 for €33.00.
+Customer Barry Rios got the haircut Buzz on Monday 01 January 2024 for €50.00.
+Customer Brett Harris got the haircut DipDyed on Monday 01 January 2024 for €35.00.
+
+Exercise 2.2
+============
+Customer Mark Mills got the haircut Mohawk on Tuesday 30 April 2024 for €40.00.
+Customer Stephanie Pitts got the haircut Bald on Tuesday 30 April 2024 for €20.00.
+Customer Tyrone Carr got the haircut Braided on Tuesday 30 April 2024 for €42.00.
+Customer Vanessa Martin got the haircut Pompadour on Tuesday 30 April 2024 for €38.00.
+Customer Vincent Simpson got the haircut DipDyed on Tuesday 30 April 2024 for €35.00.
+
+Exercise 2.3
+============
+Customer William Mason got the haircut Afro on Monday 19 February 2024 for €47.00.
+
+Exercise 2.4
+============
+Customer Tom Sanford got the haircut DipDyed on Tuesday 09 April 2024 for €35.00.
+Customer Casey Brown got the haircut Bald on Wednesday 10 April 2024 for €20.00.
+Customer Alisha Ritter got the haircut Pompadour on Wednesday 10 April 2024 for €38.00.
+Customer Amy Walls got the haircut Undercut on Wednesday 10 April 2024 for €45.00.
+Customer Angela Collins got the haircut Bald on Wednesday 10 April 2024 for €20.00.
+Customer Arthur Gonzales got the haircut Buzz on Wednesday 10 April 2024 for €50.00.
+Customer Brandy Barry got the haircut Pompadour on Wednesday 10 April 2024 for €38.00.
+Customer Charles Ramirez got the haircut Mohawk on Wednesday 10 April 2024 for €40.00.
+Customer Christopher Wright got the haircut Afro on Wednesday 10 April 2024 for €47.00.
+Customer Daniel Lopez got the haircut Pompadour on Wednesday 10 April 2024 for €38.00.
+Customer Darrell Hammond got the haircut Mohawk on Wednesday 10 April 2024 for €40.00.
+Customer David Zimmerman got the haircut Wavy on Wednesday 10 April 2024 for €33.00.
+Customer Deborah Cooper got the haircut Mohawk on Wednesday 10 April 2024 for €40.00.
+Customer Emily Rush got the haircut Mohawk on Wednesday 10 April 2024 for €40.00.
+Customer Jeffery Gutierrez got the haircut DipDyed on Wednesday 10 April 2024 for €35.00.
+Customer Jeffrey Harris got the haircut Braided on Wednesday 10 April 2024 for €42.00.
+Customer Lisa Rice got the haircut Pompadour on Wednesday 10 April 2024 for €38.00.
+Customer Misty Perez got the haircut Buzz on Wednesday 10 April 2024 for €50.00.
+Customer Rebecca Smith got the haircut Wavy on Wednesday 10 April 2024 for €33.00.
+Customer Tyler Ellis got the haircut Wavy on Wednesday 10 April 2024 for €33.00.
+Customer Virginia Love got the haircut Bald on Wednesday 10 April 2024 for €20.00.
+Customer Christine Hamilton got the haircut Bald on Thursday 11 April 2024 for €20.00.
+Customer Natalie Green got the haircut Afro on Thursday 11 April 2024 for €47.00.
+Customer Shawn Blackburn got the haircut Pompadour on Thursday 11 April 2024 for €38.00.
+Customer Alexander Oneill got the haircut DipDyed on Thursday 11 April 2024 for €35.00.
+Customer Billy Leonard got the haircut DipDyed on Thursday 11 April 2024 for €35.00.
+
+Exercise 3
+==========
+There are 200 unique names, namely {'Angela Bell', 'Samuel Rivera', 'Christine Palmer', 'Catherine Gibson', 'Kim Nguyen', 'Heather Lewis', 'Charles Ramirez', 'Daniel Lopez', 'Arthur Gonzales', 'Ryan Maldonado', 'Anthony Mckay', 'Kevin Aguilar', 'Christine Hamilton', 'Melanie Rodriguez', 'David Stevens', 'Cole Welch', 'Susan Lee', 'Jennifer Davis', 'Vanessa Martin', 'Jason Wilson', 'John Torres', 'Kristen Fitzgerald', 'Diane Murray', 'Carlos Harrison', 'Russell Jones', 'Willie Ellis', 'Sarah Hall', 'Carol Church', 'Steve Hayes', 'Tony Holloway', 'April Robinson', 'Kristine Ramirez', 'William Thompson', 'Rebecca Smith', 'Samantha Bender', 'Hayden Trujillo', 'Michael Medina', 'David Zimmerman', 'Stephanie Maldonado', 'Mary Greer', 'Stephanie Pitts', 'Casey Brown', 'Mercedes King', 'Katie Gentry', 'Lucas Chan', 'Andrew Gardner', 'Cindy Richmond', 'Mary Johnson', 'Krista Williams', 'John Cochran', 'Randall Anderson', 'Jonathon Beltran', 'James Ramirez', 'Vincent Simpson', 'Kimberly Howard', 'Joseph Alvarado', 'Jennifer Jacobson', 'Christopher Pitts', 'Virginia Love', 'Daniel Johnson', 'Ashley Miller', 'Lisa Rice', 'Tyrone Carr', 'Michelle Bates', 'Chris Lynch', 'Curtis Maldonado', 'Sean Christian', 'Jason Summers', 'Michael Peterson', 'Amy Perry', 'Thomas Fisher', 'Samuel Torres', 'Brandy Barry', 'David Torres', 'Jonathan Wilson', 'Brad Cook', 'Lance Garcia', 'Frank Hudson', 'Jason Morris', 'Jeffery Gutierrez', 'George Cox', 'Johnny Smith', 'Ann Ramirez', 'Rebekah Burgess', 'Alisha Ritter', 'Joshua Walker', 'Elizabeth Gaines', 'Matthew Lyons', 'Joshua Warner', 'Jeffrey Harris', 'Charles Monroe', 'Christopher Watkins', 'Molly Bradford', 'Jordan Berger', 'Ann Smith', 'Christopher Wright', 'Robert Adams', 'Philip French', 'Melissa Mitchell', 'Roberto Krueger', 'Melissa Myers', 'Tom Sanford', 'Keith Melton', 'Emily Rush', 'William Mason', 'Karen Henry', 'Billy Leonard', 'Shawn Blackburn', 'Gregory Moss', 'Lisa Strickland', 'Donald Hodge', 'Jon Potter', 'Tanner Rogers', 'Joshua Howell', 'Samantha Owens', 'Leslie Taylor', 'Brett Harris', 'Dennis Hale', 'Erica Sullivan', 'Matthew Lopez', 'Julia Rodgers', 'Barry Rios', 'Steven Perez', 'Mark Mills', 'Misty Perez', 'James Johnson', 'Cory Cole', 'Julie Roberts', 'Danielle Phillips', 'Michael Travis', 'Jerry Sutton', 'Mark Salas', 'Amber Colon', 'Matthew Lawrence', 'Lauren King', 'Jaclyn Lewis', 'Stephanie Lucas', 'Jennifer Chambers', 'Shawn Johnson', 'Valerie Carlson', 'Diane Dixon', 'Teresa Bryant', 'Brent Cook', 'Anthony Ferrell', 'Megan Martinez', 'Anne Carter', 'Breanna Duffy', 'Rebecca Gomez', 'Alyssa Perez', 'David Miranda', 'Kelly Davis', 'Angela Collins', 'Alexander Oneill', 'Jennifer Tapia', 'James Freeman', 'Wanda Johnson', 'Devon Price', 'Tracy Thomas', 'Gina Grant', 'Carol Kim', 'Danny Davis', 'Daniel Kim', 'Robert Thompson', 'Darrell Hammond', 'Kimberly Mendez', 'Brandi Yang', 'Lori Vazquez', 'Angela Smith', 'Donna Jefferson', 'Ann Anderson', 'Amy Walls', 'Thomas Martinez', 'Laura Taylor', 'Natalie Green', 'Jonathan Moore', 'Olivia Miller', 'Chelsea Cline', 'Chad Velez', 'Lisa Schmidt', 'Tyler Ellis', 'Robert Olsen', 'Amanda Clements', 'Steven Castro', 'Kenneth Reyes', 'Nancy Galloway', 'James Henson', 'Maureen Farmer', 'Denise Cabrera', 'Randy Jenkins', 'Thomas Long', 'Christopher Hudson', 'Patrick Blake', 'Jesus Fritz', 'Cassie Bruce', 'Julie Colon', 'David Christensen', 'Jacob Mcdonald', 'Jessica Rice', 'Deborah Cooper', 'David Murillo'}
+
+Exercise 4
+==========
+
+Exercise 4.1
+============
+Total revenue is €93,405.00.
+
+Exercise 4.2
+============
+Total revenue in March 2024 is €23,931.00.
+
+Exercise 4.3
+============
+Total revenue on Mondays is €13,781.00.
+Total revenue on Sundays is €13,220.00.
+
+Exercise 4.4
+============
+Revenue M: €32,248.00 (832 clients). Average revenue: €38.76.
+Revenue F: €33,789.00 (874 clients). Average revenue: €38.66.
+Revenue X: €27,368.00 (714 clients). Average revenue: €38.33.
+
+Exercise 4.5
+============
+HAIRSTYLES=[('Afro', 47), ('Bald', 20), ('Braided', 42), ('Buzz', 50), ('Crew', 37), ('DipDyed', 35), ('Mohawk', 40), ('Pompadour', 38), ('Undercut', 45), ('Wavy', 33)]
+Average price of a haircut: €38.70.
+
+Exercise 4.6
+============
+Revenue after price change: €95,618.85.
+
+Exercise 4.7
+============
+Revenue difference after price change: €2,213.85.
+
+Exercise 4.8
+============
+Revenue after discount: €93,861.20.
+
+Exercise 4.9
+============
+Percentual revenue difference after discount: 0.49%.
+
+Exercise 4.10
+=============
+Revenue after discount: €93,919.12.
+
+Exercise 5
+==========
+
+Exercise 5.1
+============
+Total revenue: €93,405.00, Total revenue with function: €93,405.00.
+
+Exercise 5.2
+============
+Revenue with scaling_factor=1.075 is €100,410.37.
+
+Exercise 6
+==========
+Reached revenue of €1,000.00. Daniel Kim is the lucky one! 🎉
