@@ -4,6 +4,9 @@ If you cannot complete an exercise, and you need the result for following exerci
 out import statement like this: `# from .solutions.exercise_1_1 import order_strings`. This was created with only a
 very limited set of data and is no replacement for your own solution in order to successfully complete these exercises.
 If you need help, please consult your mentor.
+
+Note: these example solutions mention first names instead of full names. This is not representative of the actual expected
+output.
 """
 
 from datetime import date
@@ -17,7 +20,7 @@ from header_print import header_print
 We start you off with some random data to parse. Please replace the value of the `your_favourite_food` variable with
 your own favourite food. This makes everyone's data unique.
 
-PS: We assume that a customer is uniquely defined by their first name. If "Martin" appears multiple times in the data,
+PS: We assume that a customer is uniquely defined by their name. If "Martin Adams" appears multiple times in the data,
 this is the same customer.
 """
 print("⚙️ Generating data...")
@@ -28,7 +31,7 @@ order_specs = generate_data.OrderSpecs(num_orders_per_day=20, start_date=date(20
 data_string = generate_data.main(customer_specs=customer_specs, order_specs=order_specs, seed=your_favourite_food)
 
 # Print first 100 characters of the data to see what it looks like, which is something like this:
-# > Martin,51,M,Monday 01 January 2024,Bald,20;Victor,28,M,Monday 01 January 2024,Mohawk,40;...
+# > Martin Adams ,51,M,Monday 01 January 2024,Bald,20;Victor Barnes,28,M,Monday 01 January 2024,Mohawk,40;...
 print("🚀 Data generated correctly!")
 print(f"Start of data_string: '{data_string[:100]}'")
 
@@ -46,7 +49,7 @@ Exercise 1.1
 The data seems to have multiple orders, which are separated by a semicolon (;).
 
 As the first step, create a list `orders_strings` where each entry is only the string corresponding to one order.
-> Example output: ["Martin ,51,M,Monday 01 January 2024,Bald,20", "Victor,28,M,Monday 01 January 2024,Mohawk,40", ...]
+> Example output: ["Martin Adams ,51,M,Monday 01 January 2024,Bald,20", "Victor Barnes,28,M,Monday 01 January 2024,Mohawk,40", ...]
 """
 header_print("Exercise 1.1")
 orders_strings = ...
@@ -60,7 +63,7 @@ order and get insights from this?
 
 As the next step in the data parsing, each element of the list should be a list itself. Make a new variable and name
 it `orders_lists`.
-> Example output: [["Martin ", "51", "M", "Monday 01 January 2024", "Bald", "20"], ...]
+> Example output: [["Martin Adams ", "51", "M", "Monday 01 January 2024", "Bald", "20"], ...]
 """
 header_print("Exercise 1.2")
 orders_lists = ...
@@ -71,11 +74,11 @@ Exercise 1.3
 ============
 Great, each part of our list is now an individual order that we can use! The next issue pops up though: some names seem
 to have some data corruption and they have some whitespaces before or after the name. See for example in our example
-output above, that we have the name "Martin " and not "Martin" - this was not a typo ;)
+output above, that we have the name "Martin Adams " and not "Martin Adams" - this was not a typo ;)
 
 As the next step, go through the list and remove the whitespaces from the start and end of names. Make a new variable
 and name it `orders_cleaned`.
-> Example output: [["Martin", "51", "M", "Monday 01 January 2024", "Bald", "20"], ...]
+> Example output: [["Martin Adams", "51", "M", "Monday 01 January 2024", "Bald", "20"], ...]
 """
 header_print("Exercise 1.3")
 orders_cleaned = ...
@@ -92,7 +95,7 @@ them, so we need to transform (aka cast) them.
 
 As the next step, go through the orders and make the age of the customer and the price of the hairstyle integer. Make a
 new variable and name it `orders_casted`.
-> Example output: [["Martin", 51, "M", "Monday 01 January 2024", "Bald", 20], ...]
+> Example output: [["Martin Adams", 51, "M", "Monday 01 January 2024", "Bald", 20], ...]
 """
 header_print("Exercise 1.4")
 orders_casted = ...
@@ -106,9 +109,9 @@ from the data. Let's start with getting to know the data a little bit better.
 
 For each sub-exercise, print it in the format: "Customer <name> got the haircut <hairstyle> on <date> for €<cost>.".
 > Example output:
-> "Customer Natalie got the haircut Braided on Monday 30 December 2024 for €42.00."
-> "Customer Caroline got the haircut Bald on Tuesday 31 December 2024 for €20.00."
-> "Customer Glenn got the haircut Pompadour on Tuesday 31 December 2024 for €38.00."
+> "Customer Natalie Adams got the haircut Braided on Monday 30 December 2024 for €42.00."
+> "Customer Caroline Barnes got the haircut Bald on Tuesday 31 December 2024 for €20.00."
+> "Customer Glenn Collier got the haircut Pompadour on Tuesday 31 December 2024 for €38.00."
 """
 header_print("Exercise 2")
 
@@ -148,11 +151,11 @@ order_2000_to_2025 = ...
 Exercise 3
 ==========
 Of course, customers do not only get one haircut per year, so you expect to see some names in the data multiple times
-(remember that we assume that the first name of a customer is unique).
+(remember that we assume that the name of a customer is unique).
 
 Find the unique customers that the hairdresser has served. Put the unique names in a variable called `unique_names`, and
 then print how many there are in and who they are in this format: "There are ... unique names, namely ..."
-> Example output: "There are 637 unique names, namely ['Terry', 'Dennis', 'Beth', ..."
+> Example output: "There are 637 unique names, namely ['Terry Adams', 'Dennis Barnes', 'Beth Collier', ..."
 
 Extra challenge: Try this with a set comprehension!
 """
