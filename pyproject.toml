@@ -1,0 +1,15 @@
+[project]
+name = "skill-path-python-project"
+version = "0.1.0"
+description = "End project for the Data track in the Skill Path group"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faker~=36.1.0",
+    "polars>=1.22.0",
+]
+
+[dependency-groups]
+lint = [
+    "pre-commit>=4.1.0",
+]

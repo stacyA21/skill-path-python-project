@@ -1,0 +1,26 @@
+line-length = 120
+target-version = "py313"
+fix = true
+
+[lint]
+select = ["ALL"]
+extend-ignore = [
+    "D100",     # We do not require docstrings at the top of files/modules
+    "D104",     # We do not require docstrings in __init__.py files
+    "T201",     # We allow use of print statements
+    "S101",     # We allow use of assert
+    "S311",     # We allow use of the `random` module over `secrets`
+    "PLR2004",  # Magic values can be used in comparison
+    "ERA001",   # We use commented out code which students can use to import answers if they are stuck
+
+    # Incompatible with other rules so need to be explicitly ignored
+    "COM812",   # missing-trailing-comma; may cause conflicts when used with the formatter
+    "D203",     # incorrect-blank-line-before-class; incompatible with D211
+    "D213",     # multi-line-summary-second-line; incompatible with D212
+
+    # We are not strict on error message formatting:
+    "EM", "TRY",
+
+    # TODO notes are allowed, so ignore the following:
+    "FIX002", "TD",
+]
