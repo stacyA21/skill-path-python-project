@@ -55,14 +55,10 @@ header_print("Exercise 1.1")
 orders_strings = []
 for order in data_string.split(";"):
     orders_strings.append(order.strip())
-    orders_strings_new = '\n'.join(orders_strings)
-# Print the first 5 orders to see if it worke
-print(orders_strings_new)
 
+orders_strings_new = '\n'.join(orders_strings)
 
-
-# from .solutions.exercise_1_1 import orders_strings
-
+print(orders_strings[:5])
 """
 Exercise 1.2
 ============
@@ -77,14 +73,13 @@ header_print("Exercise 1.2")
 header_print("Exercise 1.2")
 orders_lists = []
 
-# Iterate over the list of order strings and split each string by ","
+#split each string by ","
 for order in orders_strings:
     orders_lists.append(order.split(","))
 
-# Print the first 5 orders to verify the result
+
 print(orders_lists[:5])
 
-# from .solutions.exercise_1_2 import orders_list
 
 """
 Exercise 1.3
@@ -98,8 +93,11 @@ and name it `orders_cleaned`.
 > Example output: [["Martin Adams", "51", "M", "Monday 01 January 2024", "Bald", "20"], ...]
 """
 header_print("Exercise 1.3")
-orders_cleaned = ...
-# from .solutions.exercise_1_3 import orders_cleaned
+orders_cleaned = []
+for order in orders_lists:
+    order[0] = order[0].strip()
+    orders_cleaned.append(order)
+print(orders_cleaned[:5]) 
 
 """
 Exercise 1.4
@@ -117,12 +115,9 @@ new variable and name it `orders_casted`.
 header_print("Exercise 1.4")
 orders_casted = [
     [order[0], int(order[1]), order[2], order[3], order[4], int(order[5])]
-    for order in orders_lists
+    for order in orders_cleaned
 ]
-print(orders_casted [:5])  # Print the first 5 orders to verify the result
-#already cleaned in question 1.1 
-# from .solutions.exercise_1_4 import orders_casted
-
+print(orders_casted [:5]) 
 """
 Exercise 2
 ==========
@@ -152,7 +147,7 @@ def print_order(order):
     print(f"Customer {name} got the haircut {hairstyle} on {date} for €{cost}.")
 for order in orders_casted[:3]:
     print_order(order)
-# Print the first 3 orders to verify the resul
+
 "Customer {name} got the haircut {hairstyle} on {date} for €{cost}."
 """
 Exercise 2.2
@@ -175,7 +170,8 @@ What was the 1000th order?
 """
 header_print("Exercise 2.3")
 order_1000 =[]
-print("100th order")
+print("1000th order")
+#iterate over the orders_casted list
 for order in orders_casted[999:1000]:
     print_order(order)
 """
