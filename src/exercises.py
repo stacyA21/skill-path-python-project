@@ -24,7 +24,7 @@ PS: We assume that a customer is uniquely defined by their name. If "Martin Adam
 this is the same customer.
 """
 print("⚙️ Generating data...")
-your_favourite_food: SeedType = "I don't have a favourite dish"
+your_favourite_food: SeedType = "Pizza"
 
 customer_specs = generate_data.CustomerSpecs(num_customers=5_000, min_age=12, max_age=80)
 order_specs = generate_data.OrderSpecs(num_orders_per_day=20, start_date=date(2024, 1, 1), end_date=date(2024, 12, 31))
@@ -54,9 +54,8 @@ As the first step, create a list `orders_strings` where each entry is only the s
 header_print("Exercise 1.1")
 orders_strings = []
 for order in data_string.split(";"):
+    #strip whitespaces
     orders_strings.append(order.strip())
-
-orders_strings_new = '\n'.join(orders_strings)
 
 print(orders_strings[:5])
 """
@@ -70,15 +69,15 @@ it `orders_lists`.
 > Example output: [["Martin Adams ", "51", "M", "Monday 01 January 2024", "Bald", "20"], ...]
 """
 header_print("Exercise 1.2")
-header_print("Exercise 1.2")
+
 orders_lists = []
 
-#split each string by ","
+#split string ","
 for order in orders_strings:
     orders_lists.append(order.split(","))
 
 
-print(orders_lists[:5])
+print(orders_lists[:30])
 
 
 """
@@ -93,6 +92,7 @@ and name it `orders_cleaned`.
 > Example output: [["Martin Adams", "51", "M", "Monday 01 January 2024", "Bald", "20"], ...]
 """
 header_print("Exercise 1.3")
+#already stripped all whitespaces exc 1.1, but here is how I would do it at this step.
 orders_cleaned = []
 for order in orders_lists:
     order[0] = order[0].strip()
@@ -118,6 +118,9 @@ orders_casted = [
     for order in orders_cleaned
 ]
 print(orders_casted [:5]) 
+
+#create a copy of orders_casted to use in exercise 5.1
+orders_casted_original = [order.copy() for order in orders_casted]
 """
 Exercise 2
 ==========
@@ -161,7 +164,6 @@ for order in orders_casted[-5:]:
     print_order(order)
 
 
- # Print the last 5 orders to verify the result
 
 """
 Exercise 2.3
@@ -173,6 +175,7 @@ order_1000 =[]
 print("1000th order")
 #iterate over the orders_casted list
 for order in orders_casted[999:1000]:
+    order_1000.append(order)
     print_order(order)
 """
 Exercise 2.4
@@ -183,6 +186,7 @@ header_print("Exercise 2.4")
 order_2000_to_2025 = []
 print("2000 to 2025th order")
 for order in orders_casted[1999:2025]:
+    order_2000_to_2025.append(order)
     print_order(order)
 """
 Exercise 3
@@ -197,8 +201,11 @@ then print how many there are in and who they are in this format: "There are ...
 Extra challenge: Try this with a set comprehension!
 """
 header_print("Exercise 3")
+#create a set of unique names 
 unique_names = {order[0] for order in orders_casted}
 print(f"There are {len(unique_names)} unique names, namely {list(unique_names)}.")
+
+
 
 """
 Exercise 4
@@ -213,6 +220,7 @@ Exercise 4.1
 What was the total revenue in the data? Put this in a variable named `total_revenue`.
 """
 header_print("Exercise 4.1")
+print("total revenue: ")
 total_revenue = 0
 for order in orders_casted:
     total_revenue += order[5]
@@ -223,6 +231,8 @@ Exercise 4.2
 What was the revenue in the month of March 2024? Put this in a variable named `revenue_march_2024`.
 """
 header_print("Exercise 4.2")
+#check if "March 2024" is in the date string
+print("revenue in March 2024: ")
 revenue_march_2024 = 0
 for order in orders_casted:
     if "March 2024" in order[3]:
@@ -234,6 +244,7 @@ Exercise 4.3
 What was the revenue on Mondays? What about on Sundays? Name these variables `revenue_mondays` and `revenue_sundays`.
 """
 header_print("Exercise 4.3")
+print("revenue on Mondays and Sundays: ")
 revenue_mondays = 0
 revenue_sundays = 0
 for order in orders_casted:
@@ -259,6 +270,7 @@ For each gender, print in the following format:
 Extra challenge: try to use only one for-loop to compute the necessary information for all genders.
 """
 header_print("Exercise 4.4")
+print("Total revenue for each gender and average revenue: ")
 revenue_m = 0
 revenue_f = 0
 revenue_x = 0
@@ -270,6 +282,8 @@ for order in orders_casted:
         revenue_f += order[5]
     elif order[2] == "X":
         revenue_x += order[5]
+
+
 
 count_m = sum(1 for order in orders_casted if order[2] == "M")
 count_f = sum(1 for order in orders_casted if order[2] == "F")
@@ -299,7 +313,7 @@ the name of the haircut, the second element is the price. You can print it to in
 """
 header_print("Exercise 4.5")
 HAIRSTYLES = generate_data.HAIRSTYLES
-print(f"{HAIRSTYLES=}")
+print(HAIRSTYLES)
 
 average_price_haircut = 0
 for hairstyle in HAIRSTYLES:
@@ -326,9 +340,10 @@ Print the result in the following format:
 """
 header_print("Exercise 4.6")
 total_revenue_inflation_correction = 0
+orders_casted_infl= [order.copy() for order in orders_casted_original]  #make copy of original data to avoid cumulative changes
 
 inflation = 3.5 / 100
-for order in orders_casted:
+for order in orders_casted_infl:
     if order[1] > 18 or order[1] < 65:
         order[5] *= (1 + inflation)
         total_revenue_inflation_correction += order[5]
@@ -366,7 +381,10 @@ header_print("Exercise 4.8")
 total_revenue_discount = 0
 discount_juniors = 0.10
 discount_seniors = 0.05
-for order in orders_casted:
+
+#make copy of orders_casted to avoid the changes made in other excercises
+orders_casted_new = [order.copy() for order in orders_casted_original]
+for order in orders_casted_new:
     if order[1] < 18:
         order[5] *= (1 - discount_juniors)
     elif order[1] > 65:
@@ -385,7 +403,7 @@ Calculate the difference in revenue again. However, this time, calculate the per
 > "Percentual revenue increase after discount: <revenue_difference_percent>%."
 """
 header_print("Exercise 4.9")
-# from .solutions.exercise_4_8 import total_revenue_discount
+#calculate percentual difference
 revenue_difference_percent = (
     (total_revenue_discount - total_revenue) / total_revenue * 100
 )
@@ -404,8 +422,12 @@ Calculate the new revenue after without the discount for the Wavy haircut for ju
 > "Revenue after discount (no Wavy): €<total_revenue_discount_no_wavy>."
 """
 header_print("Exercise 4.10")
+#the same calculation as before but excluding "Wavy"
 total_revenue_discount_no_wavy = 0
-for order in orders_casted:
+#create copy of orders_casted to avoid the changes made in other excercises
+orders_casted_discount = [order.copy() for order in orders_casted_original]
+
+for order in orders_casted_discount:
     if order[1] < 18 and order[4] != "Wavy":
         order[5] *= (1 - discount_juniors)
     elif order[1] > 65:
@@ -435,14 +457,19 @@ Test the function on the original input, `orders_casted`, and see if you get the
 > "Total revenue: <total_revenue>, Total revenue with function: <total_revenue_function>".
 """
 header_print("Exercise 5.1")
-total_revenue_function = ...
+total_revenue_function = 0
 def calculate_revenue(orders):
-    total_revenue = 0
+    total_revenue_function = 0
     for order in orders:
-        total_revenue += order[5]
-    return total_revenue
-total_revenue = calculate_revenue(orders_casted)
+        total_revenue_function += order[5]
+    return total_revenue_function
+#use the copy of orders_casted to avoid the changes made in other excercises
+total_revenue_function = calculate_revenue(orders_casted_original)
 print(f"Total revenue: {total_revenue:.2f}, Total revenue with function: {total_revenue_function}")
+
+#here I realized that I was working cummulatively on orders_casted in the previous exercises, so I made copies of the original list to avoid that.
+
+
 
 """
 Exercise 5.2
@@ -457,15 +484,17 @@ result in the following format:
 > "Revenue with scaling factor <scaling_factor> is <total_revenue_scaling_factor>".
 """
 header_print("Exercise 5.2")
-total_revenue_scaling_factor = ...
+total_revenue_scaling_factor = 0
+orders_casted_scaling = [order.copy() for order in orders_casted_original]
 def calculate_revenue(orders, scaling_factor):
     total_revenue = 0
     for order in orders:
         total_revenue += order[5] * scaling_factor
     return total_revenue
 scaling_factor = 1.075
-total_revenue_scaling_factor = calculate_revenue(orders_casted, scaling_factor)
+total_revenue_scaling_factor = calculate_revenue(orders_casted_scaling, scaling_factor)
 print(f"Revenue with scaling factor {scaling_factor} is {total_revenue_scaling_factor:.2f}.")
+
 
 """
 Exercise 6
@@ -478,6 +507,8 @@ have found the lucky customer, print the following:
 NB: You can assume the list `orders_casted` is sorted, meaning the first row is the first order, and the second row is
 the second order, etc.
 """
+orders_casted_winner = [order.copy() for order in orders_casted_original]
+
 header_print("Exercise 6")
 winner = ...
 def find_winner(orders):
@@ -487,5 +518,5 @@ def find_winner(orders):
         if total_revenue >= 1000:
             return order[0]
     return None
-winner = find_winner(orders_casted)
+winner = find_winner(orders_casted_winner)
 print(f"Reached revenue of €1,000.00. {winner} is the lucky one! 🎉")
